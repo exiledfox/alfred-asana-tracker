@@ -629,21 +629,22 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-import json
+				<string>import json
+import sys
+
 from workflow import Workflow3
 
 
 def main(wf):
-	project = json.loads("{query}")
-	wf.settings["project_gid"] = project["gid"]
-	sys.stdout.write(project["name"])
-	return 0
+    project = json.loads("{query}")
+    wf.settings["project_gid"] = project["gid"]
+    sys.stdout.write(project["name"])
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -686,57 +687,46 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string>Loading projects...</string>
 				<key>script</key>
-				<string>import os, sys
-import json
-from workflow import Workflow3, PasswordNotFound, MATCH_ALL, MATCH_ALLCHARS
-from workflow.background import run_in_background
+				<string>import json
+import os
+import sys
+
 from asana.api import get_projects
 from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+from workflow.background import run_in_background
 
-CACHE_SECONDS = int(os.getenv('PROJECT_LIST_CACHE_SECONDS'))
+CACHE_SECONDS = int(os.getenv("PROJECT_LIST_CACHE_SECONDS"))
 
 
 def main(wf):
-	token = get_token(wf)
-	if not token:
-		return 0
+    token = get_token(wf)
+    if not token:
+        return 0
 
-	query = "{query}"
-	if not wf.cached_data_fresh('get_projects', CACHE_SECONDS):
-		run_in_background(
-			'update_projects',
-			[
-				'/usr/bin/python',
-				wf.workflowfile('update_projects.py')
-			]
-		)
-	projects = wf.cached_data(
-		"get_projects",
-		lambda: get_projects(token),
-		max_age=0
-	)
-	filtered_projects = wf.filter(
-		query,
-		projects,
-		lambda project: project["name"],
-		match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-		min_score=20
-	)
-	for project in filtered_projects:
-		wf.add_item(
-			"Select default Project",
-			project["name"],
-			valid=True,
-			arg=json.dumps(project)
-		)
-	if len(filtered_projects) == 0:
-		wf.add_item(
-			"No projects found",
-			valid=False,
-		)
+    query = "{query}"
+    if not wf.cached_data_fresh("get_projects", CACHE_SECONDS):
+        run_in_background(
+            "update_projects", ["/usr/bin/python", wf.workflowfile("update_projects.py")]
+        )
+    projects = wf.cached_data("get_projects", lambda: get_projects(token), max_age=0)
+    filtered_projects = wf.filter(
+        query,
+        projects,
+        lambda project: project["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+    for project in filtered_projects:
+        wf.add_item("Select default Project", project["name"], valid=True, arg=json.dumps(project))
+    if len(filtered_projects) == 0:
+        wf.add_item(
+            "No projects found",
+            valid=False,
+        )
 
-	wf.send_feedback()
-	return 0
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
@@ -884,53 +874,50 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string>Loading workspaces...</string>
 				<key>script</key>
-				<string>import os, sys
-import json
-from workflow import Workflow3, PasswordNotFound, MATCH_ALL, MATCH_ALLCHARS
+				<string>import json
+import os
+import sys
+
 from asana.api import get_workspaces
 from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
 
-CACHE_SECONDS = int(os.getenv('WORKSPACE_LIST_CACHE_SECONDS'))
+CACHE_SECONDS = int(os.getenv("WORKSPACE_LIST_CACHE_SECONDS"))
 
 
 def main(wf):
-	token = get_token(wf)
-	if not token:
-		return 0
+    token = get_token(wf)
+    if not token:
+        return 0
 
-	query = "{query}"
-	workspaces = wf.cached_data(
-		"get_workspaces",
-		lambda: get_workspaces(token),
-		max_age=CACHE_SECONDS
-	)
-	filtered_workspaces = wf.filter(
-		query,
-		workspaces,
-		lambda workspace: workspace["name"],
-		match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-		min_score=20
-	)
-	for workspace in filtered_workspaces:
-		wf.add_item(
-			"Select default Workspace",
-			workspace["name"],
-			valid=True,
-			arg=json.dumps(workspace)
-		)
-	if len(filtered_workspaces) == 0:
-		wf.add_item(
-			"No workspaces found",
-			valid=False,
-		)
-   
-	wf.send_feedback()
-	return 0
+    query = "{query}"
+    workspaces = wf.cached_data(
+        "get_workspaces", lambda: get_workspaces(token), max_age=CACHE_SECONDS
+    )
+    filtered_workspaces = wf.filter(
+        query,
+        workspaces,
+        lambda workspace: workspace["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+    for workspace in filtered_workspaces:
+        wf.add_item(
+            "Select default Workspace", workspace["name"], valid=True, arg=json.dumps(workspace)
+        )
+    if len(filtered_workspaces) == 0:
+        wf.add_item(
+            "No workspaces found",
+            valid=False,
+        )
+
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))
+    wf = Workflow3()
+    sys.exit(wf.run(main))
 </string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
@@ -960,21 +947,22 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-import json
+				<string>import json
+import sys
+
 from workflow import Workflow3
 
 
 def main(wf):
-	workspace = json.loads("{query}")
-	wf.settings["workspace_gid"] = workspace["gid"]
-	sys.stdout.write(workspace["name"])
-	return 0
+    workspace = json.loads("{query}")
+    wf.settings["workspace_gid"] = workspace["gid"]
+    sys.stdout.write(workspace["name"])
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1048,30 +1036,32 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-import json
-from workflow import Workflow3
+				<string>import json
+import os
+import sys
+
 from asana.api import get_field_value
+from workflow import Workflow3
 
 
 def main(wf):
-	field_gid = "{query}"
-	task = json.loads(os.getenv("task"))
+    field_gid = "{query}"
+    task = json.loads(os.getenv("task"))
 
-	task_info = wf.stored_data("task_info")
-	task_info[task["gid"]] = {
-		"name": task["name"],
-		"spent_hours_field_gid": field_gid,
-		"spent_hours": get_field_value(task, field_gid),
-		"start_timestamp": None,
-	}
-	wf.store_data("task_info", task_info)	
-	return 0
+    task_info = wf.stored_data("task_info")
+    task_info[task["gid"]] = {
+        "name": task["name"],
+        "spent_hours_field_gid": field_gid,
+        "spent_hours": get_field_value(task, field_gid),
+        "start_timestamp": None,
+    }
+    wf.store_data("task_info", task_info)
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1114,52 +1104,50 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string>Loading fields...</string>
 				<key>script</key>
-				<string>import os, sys
-import json
-from workflow import Workflow3, MATCH_ALL, MATCH_ALLCHARS
+				<string>import json
+import os
+import sys
+
 from asana.api import get_fields, get_task
 from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, Workflow3
 
 
 def main(wf):
-	query = "{query}"
-	
-	token = get_token(wf)
-	task = json.loads(os.getenv("task"))
-	# retrieve more information from the same task
-	task = get_task(token, task["gid"])
-	wf.setvar('task', json.dumps(task))	
+    query = "{query}"
 
-	# let user choose spent hours field
-	fields = [field for field in get_fields(task) if "number_value" in field]
-	filtered_fields = wf.filter(
-		query,
-		fields,
-		lambda field: field["name"],
-		match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-		min_score=20
-	)
-	for field in filtered_fields:
-		wf.add_item(
-			"Select field to track spent hours", 
-			field["name"],
-			valid=True,
-			arg=field["gid"]
-		)
-	if len(filtered_fields) == 0:
-		wf.add_item(
-			"Select field to track spent hours",
-			"No field found. Please add a suitable field to the task",
-			valid=False
-		)
-	wf.send_feedback()
-	return 0
+    token = get_token(wf)
+    task = json.loads(os.getenv("task"))
+    # retrieve more information from the same task
+    task = get_task(token, task["gid"])
+    wf.setvar("task", json.dumps(task))
+
+    # let user choose spent hours field
+    fields = [field for field in get_fields(task) if "number_value" in field]
+    filtered_fields = wf.filter(
+        query,
+        fields,
+        lambda field: field["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+    for field in filtered_fields:
+        wf.add_item(
+            "Select field to track spent hours", field["name"], valid=True, arg=field["gid"]
+        )
+    if len(filtered_fields) == 0:
+        wf.add_item(
+            "Select field to track spent hours",
+            "No field found. Please add a suitable field to the task",
+            valid=False,
+        )
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))
-</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1281,30 +1269,31 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-import time
-import json
+				<string>import json
+import os
+import sys
+
 from workflow import Workflow3
 
 
 def main(wf):
-	task_gid = json.loads(os.getenv("task"))["gid"]
+    task_gid = json.loads(os.getenv("task"))["gid"]
 
-	if wf.stored_data("task_history") is None:
-		wf.store_data("task_history", [])
+    if wf.stored_data("task_history") is None:
+        wf.store_data("task_history", [])
 
-	if wf.stored_data("task_info") is None:
-		wf.store_data("task_info", {})
+    if wf.stored_data("task_info") is None:
+        wf.store_data("task_info", {})
 
-	task_info = wf.stored_data("task_info")
-	if task_gid not in task_info or "start_timestamp" not in task_info[task_gid]:
-		sys.stdout.write("%init_task")
-	return 0
+    task_info = wf.stored_data("task_info")
+    if task_gid not in task_info or "start_timestamp" not in task_info[task_gid]:
+        sys.stdout.write("%init_task")
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1368,83 +1357,68 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>import os, sys
-import json
-from workflow import Workflow3, PasswordNotFound, MATCH_ALL, MATCH_ALLCHARS
-from workflow.background import run_in_background
-from asana.api import get_user_task_list
-from utils import get_token, get_default_workspace_gid, get_default_project_gid
+				<string>import json
+import os
+import sys
 
-CACHE_SECONDS = int(os.getenv('TASK_LIST_CACHE_SECONDS'))
+from asana.api import get_user_task_list
+from utils import get_default_project_gid, get_default_workspace_gid, get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+from workflow.background import run_in_background
+
+CACHE_SECONDS = int(os.getenv("TASK_LIST_CACHE_SECONDS"))
 
 
 def main(wf):
-	token = get_token(wf)
-	if not token:
-		return 0
-	
-	workspace_gid = get_default_workspace_gid(wf)
-	if not workspace_gid:
-		return 0
+    token = get_token(wf)
+    if not token:
+        return 0
 
-	project_gid = get_default_project_gid(wf)
-	if not project_gid:
-		return 0
+    workspace_gid = get_default_workspace_gid(wf)
+    if not workspace_gid:
+        return 0
 
-	query = wf.args[0]
-	
-	if not wf.cached_data_fresh('get_user_task_list', CACHE_SECONDS):
-		run_in_background(
-			'update_tasks',
-			[
-				'/usr/bin/python',
-				wf.workflowfile('update_tasks.py')
-			]
-		)
-	tasks = wf.cached_data(
-		"get_user_task_list",
-		lambda: get_user_task_list(token, "me", workspace_gid),
-		max_age=0
-	)
-	filtered_tasks = wf.filter(
-        query,
-        tasks,
-        lambda task: task["name"],
-        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-        min_score=20
+    project_gid = get_default_project_gid(wf)
+    if not project_gid:
+        return 0
+
+    query = wf.args[0]
+
+    if not wf.cached_data_fresh("get_user_task_list", CACHE_SECONDS):
+        run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
+    tasks = wf.cached_data(
+        "get_user_task_list", lambda: get_user_task_list(token, "me", workspace_gid), max_age=0
+    )
+    filtered_tasks = wf.filter(
+        query, tasks, lambda task: task["name"], match_on=MATCH_ALL ^ MATCH_ALLCHARS, min_score=20
     )
 
-	for task in filtered_tasks:
-		wf.add_item("Start Task", task["name"], valid=True, arg=json.dumps(task))
-	if len(filtered_tasks) == 0:
-		wf.add_item(
-			"No tasks found",
-			'Create a new task "{0}"'.format(query),
-			valid=True,
-			arg="%create_task"
-		)
-		wf.setvar('task_name', query)
+    for task in filtered_tasks:
+        wf.add_item("Start Task", task["name"], valid=True, arg=json.dumps(task))
+    if len(filtered_tasks) == 0:
+        wf.add_item(
+            "No tasks found",
+            'Create a new task "{0}"'.format(query),
+            valid=True,
+            arg="%create_task",
+        )
+        wf.setvar("task_name", query)
 
-	wf.send_feedback()
-	return 0
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3(
-		update_settings={
-			'github_slug': 'pinuz95/alfred-asana-tracker',
-			'frequency': 1
-		}
-	)
+    wf = Workflow3(update_settings={"github_slug": "pinuz95/alfred-asana-tracker", "frequency": 1})
 
-	if wf.update_available:
-		wf.add_item(
-			'New version available',
-			'Click here to install the update',
-			autocomplete='workflow:update',
-		)
+    if wf.update_available:
+        wf.add_item(
+            "New version available",
+            "Click here to install the update",
+            autocomplete="workflow:update",
+        )
 
-	sys.exit(wf.run(main))
+    sys.exit(wf.run(main))
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -1474,28 +1448,30 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
+				<string>import json
+import os
+import sys
 import time
-import json
+
 from workflow import Workflow3
 
 
 def main(wf):
-	task = json.loads(os.getenv("task"))
-	task_info = wf.stored_data("task_info")
-	if task_info[task["gid"]]["start_timestamp"] is None:
-		task_info[task["gid"]]["start_timestamp"] = time.time()
-		wf.store_data("task_info", task_info)
-		sys.stdout.write(task["name"])
-		return 0
-	else:
-		sys.stdout.write("This task is already running!")
-		return 0
+    task = json.loads(os.getenv("task"))
+    task_info = wf.stored_data("task_info")
+    if task_info[task["gid"]]["start_timestamp"] is None:
+        task_info[task["gid"]]["start_timestamp"] = time.time()
+        wf.store_data("task_info", task_info)
+        sys.stdout.write(task["name"])
+        return 0
+    else:
+        sys.stdout.write("This task is already running!")
+        return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1568,22 +1544,23 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-from workflow import Workflow3
+				<string>import sys
+
 from utils import stop_task
+from workflow import Workflow3
 
 
 def main(wf):
-	task_gid = "{query}"
-	task_name = wf.stored_data("task_info")[task_gid]["name"]
-	elapsed_hours = stop_task(wf, task_gid)
-	sys.stdout.write("{} (running for {:.1f} hours)".format(task_name, elapsed_hours))
-	return 0
+    task_gid = "{query}"
+    task_name = wf.stored_data("task_info")[task_gid]["name"]
+    elapsed_hours = stop_task(wf, task_gid)
+    sys.stdout.write("{} (running for {:.1f} hours)".format(task_name, elapsed_hours))
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1626,62 +1603,57 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string>Loading tasks…</string>
 				<key>script</key>
-				<string>import os, sys
+				<string>import sys
 import time
-from workflow import Workflow3, PasswordNotFound, MATCH_ALL, MATCH_ALLCHARS
+
 from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
 
 
 def main(wf):
-	token = get_token(wf)
-	if not token:
-		return 0
+    token = get_token(wf)
+    if not token:
+        return 0
 
-	task_info = wf.stored_data("task_info")
-	
-	if task_info is None:
-		wf.add_item(
-			"No running tasks",
-			valid=False
-		)
-		wf.send_feedback()
-		return 0
+    task_info = wf.stored_data("task_info")
 
-	query = "{query}"
-	running_tasks = [
-		{
-			"gid": task_gid,
-			"name": "{} (running for {:.1f} hours)".format(
-				task_info[task_gid]["name"],
-				(time.time() - task_info[task_gid]["start_timestamp"])/3600
-			)
-		}
-		for task_gid in task_info if task_info[task_gid]["start_timestamp"] is not None
-	]
-	filtered_tasks = wf.filter(
-		query,
-		running_tasks,
-		lambda task: task["name"],
-		match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-		min_score=20
-	)
+    if task_info is None:
+        wf.add_item("No running tasks", valid=False)
+        wf.send_feedback()
+        return 0
 
-	for task in filtered_tasks:
-		wf.add_item("Stop Task", task["name"], valid=True, arg=task["gid"])
-	if len(filtered_tasks) == 0:
-		wf.add_item(
-			"No running tasks",
-			valid=False
-		)
-	
-	wf.send_feedback()
-	return 0
+    query = "{query}"
+    running_tasks = [
+        {
+            "gid": task_gid,
+            "name": "{} (running for {:.1f} hours)".format(
+                task_info[task_gid]["name"],
+                (time.time() - task_info[task_gid]["start_timestamp"]) / 3600,
+            ),
+        }
+        for task_gid in task_info
+        if task_info[task_gid]["start_timestamp"] is not None
+    ]
+    filtered_tasks = wf.filter(
+        query,
+        running_tasks,
+        lambda task: task["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+
+    for task in filtered_tasks:
+        wf.add_item("Stop Task", task["name"], valid=True, arg=task["gid"])
+    if len(filtered_tasks) == 0:
+        wf.add_item("No running tasks", valid=False)
+
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))
-</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1803,32 +1775,29 @@ if __name__ == "__main__":
 				<string></string>
 				<key>script</key>
 				<string>import sys
-from workflow import Workflow3, PasswordNotFound
-from utils import get_token, get_default_project_gid
+
+from utils import get_default_project_gid, get_token
+from workflow import PasswordNotFound, Workflow3
 
 
 def main(wf):
-	token = get_token(wf)
-	if not token:
-		return 0
-	
-	project_gid = get_default_project_gid(wf)
-	if not project_gid:
-		return 0
+    token = get_token(wf)
+    if not token:
+        return 0
 
-	wf.add_item(
-		"Create Task",
-		'Create a new task "{0}"'.format("{query}"),
-		valid=True,
-		arg=query
-	)
-	wf.send_feedback()
-	return 0
+    project_gid = get_default_project_gid(wf)
+    if not project_gid:
+        return 0
+
+    query = "{query}"
+    wf.add_item("Create Task", 'Create a new task "{0}"'.format(query), valid=True, arg=query)
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1857,36 +1826,30 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
+				<string>import os
+import sys
+
+from asana.api import create_task
 from workflow import Workflow3
 from workflow.background import run_in_background
-from asana.api import create_task
-
-EPSILON = float(os.getenv('EPSILON'))
 
 
 def main(wf):
-	token = wf.get_password('asana_personal_access_token')
-	task_name = os.getenv('task_name')
-	project_gid = wf.settings["project_gid"]
-	create_task(token, {"name": task_name, 'projects': [project_gid], 'assignee': "me"})
+    token = wf.get_password("asana_personal_access_token")
+    task_name = os.getenv("task_name")
+    project_gid = wf.settings["project_gid"]
+    create_task(token, {"name": task_name, "projects": [project_gid], "assignee": "me"})
 
-	# update task list
-	run_in_background(
-		'update_tasks',
-		[
-			'/usr/bin/python',
-			wf.workflowfile('update_tasks.py')
-		]
-	)
+    # update task list
+    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
 
-	sys.stdout.write(task_name)
-	return 0
+    sys.stdout.write(task_name)
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1973,28 +1936,29 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>import os, sys
-from workflow import Workflow3
+				<string>import sys
+
 from asana.api import get_workspaces
+from workflow import Workflow3
 
 
 def main(wf):
-	token = "{query}"
-	
-	try:
-		get_workspaces(token)
-	except RuntimeError:
-		sys.stdout.write("Authentication failed! Check your token and your internet connection")
-		return 0
-	
-	wf.save_password('asana_personal_access_token', token)
-	sys.stdout.write("Authentication succeded! Enjoy the workflow")
-	return 0
+    token = "{query}"
+
+    try:
+        get_workspaces(token)
+    except RuntimeError:
+        sys.stdout.write("Authentication failed! Check your token and your internet connection")
+        return 0
+
+    wf.save_password("asana_personal_access_token", token)
+    sys.stdout.write("Authentication succeded! Enjoy the workflow")
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2017,52 +1981,44 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-import json
+				<string>import json
+import sys
+
+from asana.api import complete_task
+from utils import get_default_workspace_gid, get_token, stop_task
 from workflow import Workflow3
 from workflow.background import run_in_background
-from asana.api import complete_task
-from utils import get_token, get_default_workspace_gid, stop_task
-
-EPSILON = float(os.getenv('EPSILON'))
 
 
 def main(wf):
-	token = get_token(wf)
-	task = json.loads("{query}")
-	query = task["name"]
-	workspace_gid = get_default_workspace_gid(wf)
+    token = get_token(wf)
+    task = json.loads("{query}")
+    query = task["name"]
 
-	task_info = wf.stored_data("task_info")
-	
-	if task_info is not None and task["gid"] in task_info:
-		if task_info[task["gid"]]["start_timestamp"] is not None:
-			elapsed_hours = stop_task(wf, task["gid"])
-			query = "{} (running for {:.1f} hours)".format(task["name"], elapsed_hours)
-		
-		# clean task_info
-		task_info = wf.stored_data("task_info")
-		del task_info[task["gid"]]
-		wf.store_data("task_info", task_info)
+    task_info = wf.stored_data("task_info")
 
-	complete_task(token, task["gid"])
-	
-	# update task list
-	run_in_background(
-		'update_tasks',
-		[
-			'/usr/bin/python',
-			wf.workflowfile('update_tasks.py')
-		]
-	)
-	
-	sys.stdout.write(query)
-	return 0
+    if task_info is not None and task["gid"] in task_info:
+        if task_info[task["gid"]]["start_timestamp"] is not None:
+            elapsed_hours = stop_task(wf, task["gid"])
+            query = "{} (running for {:.1f} hours)".format(task["name"], elapsed_hours)
+
+        # clean task_info
+        task_info = wf.stored_data("task_info")
+        del task_info[task["gid"]]
+        wf.store_data("task_info", task_info)
+
+    complete_task(token, task["gid"])
+
+    # update task list
+    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
+
+    sys.stdout.write(query)
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2105,63 +2061,53 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string>Loading tasks…</string>
 				<key>script</key>
-				<string>import os, sys
-import json
-from workflow import Workflow3, PasswordNotFound, MATCH_ALL, MATCH_ALLCHARS
-from workflow.background import run_in_background
-from asana.api import get_user_task_list
-from utils import get_token, get_default_workspace_gid
+				<string>import json
+import os
+import sys
 
-CACHE_SECONDS = int(os.getenv('TASK_LIST_CACHE_SECONDS'))
+from asana.api import get_user_task_list
+from utils import get_default_workspace_gid, get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+from workflow.background import run_in_background
+
+CACHE_SECONDS = int(os.getenv("TASK_LIST_CACHE_SECONDS"))
 
 
 def main(wf):
-	token = get_token(wf)
-	if not token:
-		return 0
-	
-	workspace_gid = get_default_workspace_gid(wf)
-	if not workspace_gid:
-		return 0
+    token = get_token(wf)
+    if not token:
+        return 0
 
-	query = "{query}"
-	
-	if not wf.cached_data_fresh('get_user_task_list', CACHE_SECONDS):
-		run_in_background(
-			'update_tasks',
-			[
-				'/usr/bin/python',
-				wf.workflowfile('update_tasks.py')
-			]
-		)
-	tasks = wf.cached_data(
-		"get_user_task_list",
-		lambda: get_user_task_list(token, "me", workspace_gid),
-		max_age=0
-	)
-	filtered_tasks = wf.filter(
-		query,
-		tasks,
-		lambda task: task["name"],
-		match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-		min_score=20
-	)
+    workspace_gid = get_default_workspace_gid(wf)
+    if not workspace_gid:
+        return 0
 
-	for task in filtered_tasks:
-		wf.add_item("Complete Task", task["name"], valid=True, arg=json.dumps(task))
-	if len(filtered_tasks) == 0:
-		wf.add_item(
-			"No tasks found",
-			valid=False,
-		)
+    query = "{query}"
 
-	wf.send_feedback()
-	return 0
+    if not wf.cached_data_fresh("get_user_task_list", CACHE_SECONDS):
+        run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
+    tasks = wf.cached_data(
+        "get_user_task_list", lambda: get_user_task_list(token, "me", workspace_gid), max_age=0
+    )
+    filtered_tasks = wf.filter(
+        query, tasks, lambda task: task["name"], match_on=MATCH_ALL ^ MATCH_ALLCHARS, min_score=20
+    )
+
+    for task in filtered_tasks:
+        wf.add_item("Complete Task", task["name"], valid=True, arg=json.dumps(task))
+    if len(filtered_tasks) == 0:
+        wf.add_item(
+            "No tasks found",
+            valid=False,
+        )
+
+    wf.send_feedback()
+    return 0
+
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))
-</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2336,31 +2282,32 @@ if __name__ == "__main__":
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>import os, sys
+				<string>import sys
+
 from workflow import Workflow3
 
 
 def main(wf):
-	wf.add_item(
-		"Set your Personal Access Token",
-		"Click to set your Personal Access Token",
-		valid=True,
-		arg="%set_token",
-	)
-	wf.add_item(
-		"Get your Personal Access Token from Asana",
-		"Click to open the browser",
-		valid=True,
-		arg="%get_token",
-	)
-   
-	wf.send_feedback()
-	return 0
+    wf.add_item(
+        "Set your Personal Access Token",
+        "Click to set your Personal Access Token",
+        valid=True,
+        arg="%set_token",
+    )
+    wf.add_item(
+        "Get your Personal Access Token from Asana",
+        "Click to open the browser",
+        valid=True,
+        arg="%get_token",
+    )
+
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))
+    wf = Workflow3()
+    sys.exit(wf.run(main))
 </string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
@@ -2390,19 +2337,20 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import os, sys
-from workflow import Workflow3
+				<string>import sys
+
 from utils import generate_report
+from workflow import Workflow3
 
 
 def main(wf):
-	generate_report(wf, "{query}")
-	return 0
+    generate_report(wf, "{query}")
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2465,44 +2413,34 @@ if __name__ == "__main__":
 				<string></string>
 				<key>script</key>
 				<string>import sys
-from workflow import Workflow3
+
 from utils import string_to_seconds
+from workflow import Workflow3
 
 
 def main(wf):
-	if wf.stored_data("task_history") is None:
-		wf.add_item(
-			"Generate Report",
-			"No data to show",
-			valid=False
-		)
-		wf.send_feedback()
-		return 0
-	
-	query = "{query}"
-	if not query:
-		query = "day"
+    if wf.stored_data("task_history") is None:
+        wf.add_item("Generate Report", "No data to show", valid=False)
+        wf.send_feedback()
+        return 0
 
-	if string_to_seconds(query):
-		wf.add_item(
-			"Generate Report",
-			"Show a report of the last {}".format(query),
-			valid=True,
-			arg=query
-		)
-	else:
-		wf.add_item(
-			"Generate Report",
-			'"{}" is not a valid time unit'.format(query),
-			valid=False
-		)
-	wf.send_feedback()
-	return 0
+    query = "{query}"
+    if not query:
+        query = "day"
+
+    if string_to_seconds(query):
+        wf.add_item(
+            "Generate Report", "Show a report of the last {}".format(query), valid=True, arg=query
+        )
+    else:
+        wf.add_item("Generate Report", '"{}" is not a valid time unit'.format(query), valid=False)
+    wf.send_feedback()
+    return 0
 
 
 if __name__ == "__main__":
-	wf = Workflow3()
-	sys.exit(wf.run(main))</string>
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2592,6 +2530,15 @@ if __name__ == "__main__":
 	<key>readme</key>
 	<string>Changelog
 =========
+
+
+Version 0.1.1 - 2020-11-16
+--------------------------
+
+### Bug Fixes
+
+* Fix a bug in task creation
+
 
 
 Version 0.1.0 - 2020-11-16
@@ -3001,8 +2948,6 @@ Version 0.1.0 - 2020-11-16
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>EPSILON</key>
-		<string>0.00001</string>
 		<key>PROJECT_LIST_CACHE_SECONDS</key>
 		<string>60</string>
 		<key>TASK_LIST_CACHE_SECONDS</key>
@@ -3013,7 +2958,7 @@ Version 0.1.0 - 2020-11-16
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1.0</string>
+	<string>0.1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/pinuz95/alfred-asana-tracker</string>
 </dict>
