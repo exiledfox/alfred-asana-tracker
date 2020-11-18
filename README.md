@@ -20,20 +20,24 @@ If you want to generate reports of what you have done, you need to install [QLMa
 ## Usage
 
 ### Commands
-| Command           | Action                                                       |
-| :---------------- | :----------------------------------------------------------- |
-| asn create        | Create a new task                                            |
-| asn complete      | Mark a task complete                                         |
-| asn start         | Start the timer of a task                                    |
-| asn stop          | Stop the timer of a task                                     |
-| asn report        | Show a report of what you have done. You can specify a time frame |
-| asn set token     | Set your [Personal Access Token](https://app.asana.com/0/developer-console) |
-| asn set workspace | Set your default workspace                                   |
-| asn set project   | Set your default project                                     |
+|Command|Action|
+|:-|:-|
+|asn create|Create a new Asana task|
+|asn complete|Mark an Asana task complete|
+|asn start|Start the timer for an Asana task|
+|asn stop|Stop the timer for an Asana task|
+|asn cancel|Cancel the timer of an Asana task|
+|asn reset|Reset Alfred's knowledge on an Asana task|
+|asn report|Show a report of what you have done. You can specify a time frame|
+|asn set token|Set your [Personal Access Token](https://app.asana.com/0/developer-console)|
+|asn set workspace|Set your default workspace|
+|asn set project|Set your default project|
 
 New tasks are created on your default project.
 
 When you `start` a task, you'll be asked to select the field where you want to track the spent hours. Please note that when you `stop` or `complete` the task, this field will be overwritten by Alfred.
+
+When you `reset` a task, the history that generates the reports won't be affected.
 
 ### Examples
 

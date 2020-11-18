@@ -8,6 +8,31 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>0C4BE506-024B-42E9-B927-6038D381B10B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D04C032E-4935-4CA7-BA2D-76866C84C8BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8740DEC-694B-4897-9488-0542188AA7CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>0C9C9CC4-3B18-4013-8083-FCB108F83588</key>
 		<array>
 			<dict>
@@ -38,18 +63,6 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>62ECF140-70C7-4B72-8FD8-5C3047061EA1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>1A30DD4D-5A3A-4D4D-B407-0E6B568A88AC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -57,6 +70,18 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>F6837E6D-3185-490D-8854-EE81832250CB</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>62ECF140-70C7-4B72-8FD8-5C3047061EA1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -155,6 +180,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>0DD01E73-7D47-4896-BD37-36C34937C33D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>E38F07D2-41A5-4290-AA74-B0539219F8BC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -169,6 +204,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>CEF43D54-F9E3-43D7-A4F3-654B6D4360B6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6C43B7F2-E0F5-45CC-9C13-8EDBF49AFA35</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B8986E6-2B75-4F52-8277-EC33644ACACA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -228,11 +276,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>87418458-8B72-4FF0-B37D-02D77C9A82C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>48BBBA45-8BE9-4621-87B7-E7B5CAB82CFD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>87A4FBBB-B4F7-481F-97EF-BF1295C1614E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D04C032E-4935-4CA7-BA2D-76866C84C8BE</string>
+				<string>0C4BE506-024B-42E9-B927-6038D381B10B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -246,6 +307,56 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F489E77B-6691-4ADB-80CD-A62E6DF15029</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9B8986E6-2B75-4F52-8277-EC33644ACACA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8740DEC-694B-4897-9488-0542188AA7CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BDA1B503-0986-4148-ACBD-425E5405B9AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9C031572-A8B4-4134-8F7C-986908E0E7B0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8740DEC-694B-4897-9488-0542188AA7CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>87418458-8B72-4FF0-B37D-02D77C9A82C7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -298,6 +409,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>C293EC4D-36FB-4014-8CF9-9A6DB1072107</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BDA1B503-0986-4148-ACBD-425E5405B9AC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AE7939C9-A501-420D-B59D-F9F018611002</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -610,6 +734,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FB6B0D28-60A2-4298-9AE7-9741A1BC8F02</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9C031572-A8B4-4134-8F7C-986908E0E7B0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Giuseppe Maria Gallo</string>
@@ -621,44 +758,6 @@
 	<string>Asana Tracker</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>import json
-import sys
-
-from workflow import Workflow3
-
-
-def main(wf):
-    project = json.loads("{query}")
-    wf.settings["project_gid"] = project["gid"]
-    sys.stdout.write(project["name"])
-    return 0
-
-
-if __name__ == "__main__":
-    wf = Workflow3()
-    sys.exit(wf.run(main))</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>3</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>0CE6243C-714C-475E-99FB-298743B1029A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -756,6 +855,44 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>import json
+import sys
+
+from workflow import Workflow3
+
+
+def main(wf):
+    project = json.loads("{query}")
+    wf.settings["project_gid"] = project["gid"]
+    sys.stdout.write(project["name"])
+    return 0
+
+
+if __name__ == "__main__":
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0CE6243C-714C-475E-99FB-298743B1029A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -824,27 +961,6 @@ if __name__ == "__main__":
 			<string>8AF36CEE-15AC-4B4C-A652-6C099C7D9FED</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Default workspace set</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>B57872F2-D938-4304-A0FA-0A0DA4478848</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -980,6 +1096,27 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Default workspace set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B57872F2-D938-4304-A0FA-0A0DA4478848</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1031,6 +1168,27 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Spent hours field set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0DD01E73-7D47-4896-BD37-36C34937C33D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1045,17 +1203,18 @@ from workflow import Workflow3
 
 
 def main(wf):
-    field_gid = "{query}"
+    field = json.loads("{query}")
     task = json.loads(os.getenv("task"))
 
     task_info = wf.stored_data("task_info")
     task_info[task["gid"]] = {
         "name": task["name"],
-        "spent_hours_field_gid": field_gid,
-        "spent_hours": get_field_value(task, field_gid),
+        "spent_hours_field_gid": field["gid"],
+        "spent_hours": get_field_value(task, field["gid"]),
         "start_timestamp": None,
     }
     wf.store_data("task_info", task_info)
+    sys.stdout.write(field["name"])
     return 0
 
 
@@ -1133,7 +1292,7 @@ def main(wf):
     )
     for field in filtered_fields:
         wf.add_item(
-            "Select field to track spent hours", field["name"], valid=True, arg=field["gid"]
+            "Select field to track spent hours", field["name"], valid=True, arg=json.dumps(field)
         )
     if len(filtered_fields) == 0:
         wf.add_item(
@@ -1252,7 +1411,7 @@ if __name__ == "__main__":
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>start task</string>
+				<string>start timer</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1272,23 +1431,22 @@ if __name__ == "__main__":
 				<string>import json
 import os
 import sys
+import time
 
 from workflow import Workflow3
 
 
 def main(wf):
-    task_gid = json.loads(os.getenv("task"))["gid"]
-
-    if wf.stored_data("task_history") is None:
-        wf.store_data("task_history", [])
-
-    if wf.stored_data("task_info") is None:
-        wf.store_data("task_info", {})
-
+    task = json.loads(os.getenv("task"))
     task_info = wf.stored_data("task_info")
-    if task_gid not in task_info or "start_timestamp" not in task_info[task_gid]:
-        sys.stdout.write("%init_task")
-    return 0
+    if task_info[task["gid"]]["start_timestamp"] is None:
+        task_info[task["gid"]]["start_timestamp"] = time.time()
+        wf.store_data("task_info", task_info)
+        sys.stdout.write(task["name"])
+        return 0
+    else:
+        sys.stdout.write("This task is already running!")
+        return 0
 
 
 if __name__ == "__main__":
@@ -1304,30 +1462,9 @@ if __name__ == "__main__":
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>EFC316CD-00C4-40EC-885C-698142DA77F5</string>
+			<string>E38F07D2-41A5-4290-AA74-B0539219F8BC</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Task started</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A4E22521-C53F-418D-BC93-79166E299FE2</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1394,7 +1531,7 @@ def main(wf):
     )
 
     for task in filtered_tasks:
-        wf.add_item("Start Task", task["name"], valid=True, arg=json.dumps(task))
+        wf.add_item("Start Timer", task["name"], valid=True, arg=json.dumps(task))
     if len(filtered_tasks) == 0:
         wf.add_item(
             "No tasks found",
@@ -1427,7 +1564,7 @@ if __name__ == "__main__":
 				<key>subtext</key>
 				<string>Start the timer for an Asana task</string>
 				<key>title</key>
-				<string>Start Task</string>
+				<string>Start Timer</string>
 				<key>type</key>
 				<integer>3</integer>
 				<key>withspace</key>
@@ -1451,22 +1588,23 @@ if __name__ == "__main__":
 				<string>import json
 import os
 import sys
-import time
 
 from workflow import Workflow3
 
 
 def main(wf):
-    task = json.loads(os.getenv("task"))
+    task_gid = json.loads(os.getenv("task"))["gid"]
+
+    if wf.stored_data("task_history") is None:
+        wf.store_data("task_history", [])
+
+    if wf.stored_data("task_info") is None:
+        wf.store_data("task_info", {})
+
     task_info = wf.stored_data("task_info")
-    if task_info[task["gid"]]["start_timestamp"] is None:
-        task_info[task["gid"]]["start_timestamp"] = time.time()
-        wf.store_data("task_info", task_info)
-        sys.stdout.write(task["name"])
-        return 0
-    else:
-        sys.stdout.write("This task is already running!")
-        return 0
+    if task_gid not in task_info or "start_timestamp" not in task_info[task_gid]:
+        sys.stdout.write("%init_task")
+    return 0
 
 
 if __name__ == "__main__":
@@ -1482,9 +1620,30 @@ if __name__ == "__main__":
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>E38F07D2-41A5-4290-AA74-B0539219F8BC</string>
+			<string>EFC316CD-00C4-40EC-885C-698142DA77F5</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Timer started</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A4E22521-C53F-418D-BC93-79166E299FE2</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1507,7 +1666,7 @@ if __name__ == "__main__":
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>start task</string>
+				<string>start timer</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1544,17 +1703,24 @@ if __name__ == "__main__":
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>import sys
+				<string>import os
+import sys
 
-from utils import stop_task
+from asana.api import create_task
+from utils import get_token
 from workflow import Workflow3
+from workflow.background import run_in_background
 
 
 def main(wf):
-    task_gid = "{query}"
-    task_name = wf.stored_data("task_info")[task_gid]["name"]
-    elapsed_hours = stop_task(wf, task_gid)
-    sys.stdout.write("{} (running for {:.1f} hours)".format(task_name, elapsed_hours))
+    token = get_token(wf)
+    task_name = os.getenv("task_name")
+    project_gid = wf.settings["project_gid"]
+
+    create_task(token, {"name": task_name, "projects": [project_gid], "assignee": "me"})
+    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
+
+    sys.stdout.write(task_name)
     return 0
 
 
@@ -1571,180 +1737,9 @@ if __name__ == "__main__":
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>283BAFA7-68C2-4B95-A95C-FB4506BEDC4D</string>
+			<string>0C9C9CC4-3B18-4013-8083-FCB108F83588</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>asn stop</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading tasks…</string>
-				<key>script</key>
-				<string>import sys
-import time
-
-from utils import get_token
-from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
-
-
-def main(wf):
-    token = get_token(wf)
-    if not token:
-        return 0
-
-    task_info = wf.stored_data("task_info")
-
-    if task_info is None:
-        wf.add_item("No running tasks", valid=False)
-        wf.send_feedback()
-        return 0
-
-    query = "{query}"
-    running_tasks = [
-        {
-            "gid": task_gid,
-            "name": "{} (running for {:.1f} hours)".format(
-                task_info[task_gid]["name"],
-                (time.time() - task_info[task_gid]["start_timestamp"]) / 3600,
-            ),
-        }
-        for task_gid in task_info
-        if task_info[task_gid]["start_timestamp"] is not None
-    ]
-    filtered_tasks = wf.filter(
-        query,
-        running_tasks,
-        lambda task: task["name"],
-        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-        min_score=20,
-    )
-
-    for task in filtered_tasks:
-        wf.add_item("Stop Task", task["name"], valid=True, arg=task["gid"])
-    if len(filtered_tasks) == 0:
-        wf.add_item("No running tasks", valid=False)
-
-    wf.send_feedback()
-    return 0
-
-
-if __name__ == "__main__":
-    wf = Workflow3()
-    sys.exit(wf.run(main))</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Stop the timer for an Asana task</string>
-				<key>title</key>
-				<string>Stop Task</string>
-				<key>type</key>
-				<integer>3</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>336CAF2F-4B07-49AF-BF07-5B96B95C2801</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Task stopped</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>ACC025AC-6B45-4713-97C7-80D63853908B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{query}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>%set_token</string>
-						<key>outputlabel</key>
-						<string>set token</string>
-						<key>uid</key>
-						<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>stop task</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>F0C22B21-294E-435D-83CA-A0BEA8D92CA0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Task created</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>B9CE2989-5779-4950-BAE3-14C535A76B44</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1821,48 +1816,23 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>import os
-import sys
-
-from asana.api import create_task
-from workflow import Workflow3
-from workflow.background import run_in_background
-
-
-def main(wf):
-    token = wf.get_password("asana_personal_access_token")
-    task_name = os.getenv("task_name")
-    project_gid = wf.settings["project_gid"]
-    create_task(token, {"name": task_name, "projects": [project_gid], "assignee": "me"})
-
-    # update task list
-    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
-
-    sys.stdout.write(task_name)
-    return 0
-
-
-if __name__ == "__main__":
-    wf = Workflow3()
-    sys.exit(wf.run(main))</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Task created</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>0C9C9CC4-3B18-4013-8083-FCB108F83588</string>
+			<string>B9CE2989-5779-4950-BAE3-14C535A76B44</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1931,47 +1901,23 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>import sys
-
-from asana.api import get_workspaces
-from workflow import Workflow3
-
-
-def main(wf):
-    token = "{query}"
-
-    try:
-        get_workspaces(token)
-    except RuntimeError:
-        sys.stdout.write("Authentication failed! Check your token and your internet connection")
-        return 0
-
-    wf.save_password("asana_personal_access_token", token)
-    sys.stdout.write("Authentication succeded! Enjoy the workflow")
-    return 0
-
-
-if __name__ == "__main__":
-    wf = Workflow3()
-    sys.exit(wf.run(main))</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>3</integer>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Task completed</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>BB07AF18-F262-4F34-85DE-6905401946AC</string>
+			<string>B5E90B4A-D1F5-43E1-892B-3F6F17D44210</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1995,8 +1941,10 @@ def main(wf):
     task = json.loads("{query}")
     query = task["name"]
 
-    task_info = wf.stored_data("task_info")
+    complete_task(token, task["gid"])
+    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
 
+    task_info = wf.stored_data("task_info")
     if task_info is not None and task["gid"] in task_info:
         if task_info[task["gid"]]["start_timestamp"] is not None:
             elapsed_hours = stop_task(wf, task["gid"])
@@ -2006,11 +1954,6 @@ def main(wf):
         task_info = wf.stored_data("task_info")
         del task_info[task["gid"]]
         wf.store_data("task_info", task_info)
-
-    complete_task(token, task["gid"])
-
-    # update task list
-    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
 
     sys.stdout.write(query)
     return 0
@@ -2131,67 +2074,6 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Authentication</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>54A7E923-789C-4D73-9346-631031EE2394</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Task completed</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>B5E90B4A-D1F5-43E1-892B-3F6F17D44210</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>subtext</key>
-				<string>Paste it here and press enter</string>
-				<key>text</key>
-				<string>Set your Personal Access Token</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>CEF43D54-F9E3-43D7-A4F3-654B6D4360B6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2236,21 +2118,253 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>.*</string>
-				<key>regexcaseinsensitive</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>regexmultiline</key>
+				<key>onlyshowifquerypopulated</key>
 				<false/>
-				<key>replacestring</key>
-				<string></string>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Timer stopped</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>62ECF140-70C7-4B72-8FD8-5C3047061EA1</string>
+			<string>ACC025AC-6B45-4713-97C7-80D63853908B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>import sys
+
+from utils import stop_task
+from workflow import Workflow3
+
+
+def main(wf):
+    task_gid = "{query}"
+    task_name = wf.stored_data("task_info")[task_gid]["name"]
+    elapsed_hours = stop_task(wf, task_gid)
+    sys.stdout.write("{} (running for {:.1f} hours)".format(task_name, elapsed_hours))
+    return 0
+
+
+if __name__ == "__main__":
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>283BAFA7-68C2-4B95-A95C-FB4506BEDC4D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://app.asana.com/0/developer-console</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1A30DD4D-5A3A-4D4D-B407-0E6B568A88AC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>asn stop</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tasks…</string>
+				<key>script</key>
+				<string>import sys
+import time
+
+from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+
+
+def main(wf):
+    token = get_token(wf)
+    if not token:
+        return 0
+
+    task_info = wf.stored_data("task_info")
+
+    if task_info is None:
+        wf.add_item("No running timers", valid=False)
+        wf.send_feedback()
+        return 0
+
+    query = "{query}"
+    running_tasks = [
+        {
+            "gid": task_gid,
+            "name": "{} (running for {:.1f} hours)".format(
+                task_info[task_gid]["name"],
+                (time.time() - task_info[task_gid]["start_timestamp"]) / 3600,
+            ),
+        }
+        for task_gid in task_info
+        if task_info[task_gid]["start_timestamp"] is not None
+    ]
+    filtered_tasks = wf.filter(
+        query,
+        running_tasks,
+        lambda task: task["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+
+    for task in filtered_tasks:
+        wf.add_item("Stop Timer", task["name"], valid=True, arg=task["gid"])
+    if len(filtered_tasks) == 0:
+        wf.add_item("No running timers", valid=False)
+
+    wf.send_feedback()
+    return 0
+
+
+if __name__ == "__main__":
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Stop the timer for an Asana task</string>
+				<key>title</key>
+				<string>Stop Timer</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>336CAF2F-4B07-49AF-BF07-5B96B95C2801</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>%set_token</string>
+						<key>outputlabel</key>
+						<string>set token</string>
+						<key>uid</key>
+						<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>stop timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F0C22B21-294E-435D-83CA-A0BEA8D92CA0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+
+from asana.api import get_workspaces
+from workflow import Workflow3
+
+
+def main(wf):
+    token = "{query}"
+
+    try:
+        get_workspaces(token)
+    except RuntimeError:
+        sys.stdout.write("Authentication failed! Check your token and your internet connection")
+        return 0
+
+    wf.save_password("asana_personal_access_token", token)
+    sys.stdout.write("Authentication succeded! Enjoy the workflow")
+    return 0
+
+
+if __name__ == "__main__":
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BB07AF18-F262-4F34-85DE-6905401946AC</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -2288,26 +2402,26 @@ from workflow import Workflow3
 
 
 def main(wf):
-    wf.add_item(
-        "Set your Personal Access Token",
-        "Click to set your Personal Access Token",
-        valid=True,
-        arg="%set_token",
+	wf.add_item(
+		"Get your Personal Access Token from Asana",
+		"Click to open the browser",
+		valid=True,
+		arg="%get_token",
     )
-    wf.add_item(
-        "Get your Personal Access Token from Asana",
-        "Click to open the browser",
-        valid=True,
-        arg="%get_token",
+	wf.add_item(
+		"Set your Personal Access Token",
+		"Click to set your Personal Access Token",
+		valid=True,
+		arg="%set_token",
     )
 
-    wf.send_feedback()
-    return 0
+	wf.send_feedback()
+	return 0
 
 
 if __name__ == "__main__":
-    wf = Workflow3()
-    sys.exit(wf.run(main))
+	wf = Workflow3()
+	sys.exit(wf.run(main))
 </string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
@@ -2328,6 +2442,25 @@ if __name__ == "__main__":
 			<string>47D97526-F5A1-4377-B446-5ECCD709DF74</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Paste it here and press enter</string>
+				<key>text</key>
+				<string>Set your Personal Access Token</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CEF43D54-F9E3-43D7-A4F3-654B6D4360B6</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2368,25 +2501,6 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://app.asana.com/0/developer-console</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>1A30DD4D-5A3A-4D4D-B407-0E6B568A88AC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -2414,11 +2528,15 @@ if __name__ == "__main__":
 				<key>script</key>
 				<string>import sys
 
-from utils import string_to_seconds
+from utils import get_token, string_to_seconds
 from workflow import Workflow3
 
 
 def main(wf):
+    token = get_token(wf)
+    if not token:
+        return 0
+
     if wf.stored_data("task_history") is None:
         wf.add_item("Generate Report", "No data to show", valid=False)
         wf.send_feedback()
@@ -2464,6 +2582,71 @@ if __name__ == "__main__":
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Authentication</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>54A7E923-789C-4D73-9346-631031EE2394</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>%get_token</string>
+						<key>outputlabel</key>
+						<string>get token</string>
+						<key>uid</key>
+						<string>F6837E6D-3185-490D-8854-EE81832250CB</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>%set_token</string>
+						<key>outputlabel</key>
+						<string>set token</string>
+						<key>uid</key>
+						<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>1E432292-7E99-45F7-BD45-CEECF5AFCFA0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2480,28 +2663,14 @@ if __name__ == "__main__":
 						<key>uid</key>
 						<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
 					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{query}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>%get_token</string>
-						<key>outputlabel</key>
-						<string>get token</string>
-						<key>uid</key>
-						<string>F6837E6D-3185-490D-8854-EE81832250CB</string>
-					</dict>
 				</array>
 				<key>elselabel</key>
-				<string></string>
+				<string>generate report</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>1E432292-7E99-45F7-BD45-CEECF5AFCFA0</string>
+			<string>0C4BE506-024B-42E9-B927-6038D381B10B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2526,10 +2695,423 @@ if __name__ == "__main__":
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>.*</string>
+				<key>regexcaseinsensitive</key>
+				<false/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>62ECF140-70C7-4B72-8FD8-5C3047061EA1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Timer cancelled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>48BBBA45-8BE9-4621-87B7-E7B5CAB82CFD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>asn cancel</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tasks…</string>
+				<key>script</key>
+				<string>import sys
+import time
+
+from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+
+
+def main(wf):
+    token = get_token(wf)
+    if not token:
+        return 0
+
+    task_info = wf.stored_data("task_info")
+
+    if task_info is None:
+        wf.add_item("No running timers", valid=False)
+        wf.send_feedback()
+        return 0
+
+    query = "{query}"
+    running_tasks = [
+        {
+            "gid": task_gid,
+            "name": "{} (running for {:.1f} hours)".format(
+                task_info[task_gid]["name"],
+                (time.time() - task_info[task_gid]["start_timestamp"]) / 3600,
+            ),
+        }
+        for task_gid in task_info
+        if task_info[task_gid]["start_timestamp"] is not None
+    ]
+    filtered_tasks = wf.filter(
+        query,
+        running_tasks,
+        lambda task: task["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+
+    for task in filtered_tasks:
+        wf.add_item("Cancel Timer", task["name"], valid=True, arg=task["gid"])
+    if len(filtered_tasks) == 0:
+        wf.add_item("No running timers", valid=False)
+
+    wf.send_feedback()
+    return 0
+
+
+if __name__ == "__main__":
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Cancel the timer of an Asana task</string>
+				<key>title</key>
+				<string>Cancel Timer</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FB6B0D28-60A2-4298-9AE7-9741A1BC8F02</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>import sys
+
+from workflow import Workflow3
+
+
+def main(wf):
+	task_gid = "{query}"
+
+	# cancel the timer
+	task_info = wf.stored_data("task_info")
+	task_info[task_gid]["start_timestamp"] = None
+	wf.store_data("task_info", task_info)
+	
+	task_name = task_info[task_gid]["name"]
+	sys.stdout.write(task_name)
+	return 0
+
+
+if __name__ == "__main__":
+	wf = Workflow3()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>87418458-8B72-4FF0-B37D-02D77C9A82C7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>%set_token</string>
+						<key>outputlabel</key>
+						<string>set token</string>
+						<key>uid</key>
+						<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>cancel timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>9C031572-A8B4-4134-8F7C-986908E0E7B0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Task reset</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AE7939C9-A501-420D-B59D-F9F018611002</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>asn reset</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tasks…</string>
+				<key>script</key>
+				<string>import sys
+import time
+
+from utils import get_token
+from workflow import MATCH_ALL, MATCH_ALLCHARS, PasswordNotFound, Workflow3
+
+
+def main(wf):
+    token = get_token(wf)
+    if not token:
+        return 0
+
+    task_info = wf.stored_data("task_info")
+
+    if task_info is None:
+        wf.add_item("No saved tasks", valid=False)
+        wf.send_feedback()
+        return 0
+
+    query = "{query}"
+    saved_tasks = [
+        {
+            "gid": task_gid,
+            "name": task_info[task_gid]["name"],
+        }
+        for task_gid in task_info
+    ]
+    filtered_tasks = wf.filter(
+        query,
+        saved_tasks,
+        lambda task: task["name"],
+        match_on=MATCH_ALL ^ MATCH_ALLCHARS,
+        min_score=20,
+    )
+
+    for task in filtered_tasks:
+        wf.add_item("Reset Task", task["name"], valid=True, arg=task["gid"])
+    if len(filtered_tasks) == 0:
+        wf.add_item("No saved tasks", valid=False)
+
+    wf.send_feedback()
+    return 0
+
+
+if __name__ == "__main__":
+    wf = Workflow3()
+    sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Reset Alfred's knowledge on a Asana task</string>
+				<key>title</key>
+				<string>Reset Task</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C43B7F2-E0F5-45CC-9C13-8EDBF49AFA35</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>import sys
+
+from workflow import Workflow3
+
+
+def main(wf):
+	task_gid = "{query}"
+
+	# delete task's info
+	task_info = wf.stored_data("task_info")
+	task_name = task_info[task_gid]["name"]	
+	del task_info[task_gid]
+	wf.store_data("task_info", task_info)
+	
+	sys.stdout.write(task_name)
+	return 0
+
+
+if __name__ == "__main__":
+	wf = Workflow3()
+	sys.exit(wf.run(main))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BDA1B503-0986-4148-ACBD-425E5405B9AC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>%set_token</string>
+						<key>outputlabel</key>
+						<string>set token</string>
+						<key>uid</key>
+						<string>E67CB72C-CD05-43D7-B6A5-B3AC5720BA3E</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>reset task</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>9B8986E6-2B75-4F52-8277-EC33644ACACA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Changelog
 =========
+
+
+Version 0.2.0 - 2020-11-18
+--------------------------
+
+### Features
+
+* Cancel a timer
+* Reset knowledge on a task
+
 
 
 Version 0.1.1 - 2020-11-16
@@ -2552,14 +3134,23 @@ Version 0.1.0 - 2020-11-16
 * Show a report of what you have done</string>
 	<key>uidata</key>
 	<dict>
+		<key>0C4BE506-024B-42E9-B927-6038D381B10B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>245</integer>
+			<key>ypos</key>
+			<integer>1070</integer>
+		</dict>
 		<key>0C9C9CC4-3B18-4013-8083-FCB108F83588</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>4</integer>
 			<key>xpos</key>
 			<integer>645</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>640</integer>
 		</dict>
 		<key>0CE6243C-714C-475E-99FB-298743B1029A</key>
 		<dict>
@@ -2569,6 +3160,15 @@ Version 0.1.0 - 2020-11-16
 			<integer>1010</integer>
 			<key>ypos</key>
 			<integer>170</integer>
+		</dict>
+		<key>0DD01E73-7D47-4896-BD37-36C34937C33D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>1365</integer>
+			<key>ypos</key>
+			<integer>340</integer>
 		</dict>
 		<key>12155588-A73A-4876-8BA2-39FA742BD898</key>
 		<dict>
@@ -2581,17 +3181,13 @@ Version 0.1.0 - 2020-11-16
 		</dict>
 		<key>1A30DD4D-5A3A-4D4D-B407-0E6B568A88AC</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
 			<key>xpos</key>
 			<integer>1190</integer>
 			<key>ypos</key>
-			<integer>1050</integer>
+			<integer>910</integer>
 		</dict>
 		<key>1E432292-7E99-45F7-BD45-CEECF5AFCFA0</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
 			<key>xpos</key>
 			<integer>1015</integer>
 			<key>ypos</key>
@@ -2600,20 +3196,20 @@ Version 0.1.0 - 2020-11-16
 		<key>283BAFA7-68C2-4B95-A95C-FB4506BEDC4D</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>645</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>910</integer>
 		</dict>
 		<key>336CAF2F-4B07-49AF-BF07-5B96B95C2801</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>910</integer>
 		</dict>
 		<key>40CF6DB0-8C55-4F34-A715-41FE82053916</key>
 		<dict>
@@ -2626,12 +3222,19 @@ Version 0.1.0 - 2020-11-16
 		</dict>
 		<key>47D97526-F5A1-4377-B446-5ECCD709DF74</key>
 		<dict>
+			<key>xpos</key>
+			<integer>830</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
+		<key>48BBBA45-8BE9-4621-87B7-E7B5CAB82CFD</key>
+		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
 			<integer>830</integer>
 			<key>ypos</key>
-			<integer>1050</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>4FC54738-4C0B-4A00-9C35-59F77BA48898</key>
 		<dict>
@@ -2644,12 +3247,10 @@ Version 0.1.0 - 2020-11-16
 		</dict>
 		<key>54A7E923-789C-4D73-9346-631031EE2394</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
 			<key>xpos</key>
 			<integer>1540</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1050</integer>
 		</dict>
 		<key>5D0B3FEC-195C-4384-99B6-12A4DDFAA97B</key>
 		<dict>
@@ -2673,21 +3274,28 @@ Version 0.1.0 - 2020-11-16
 		</dict>
 		<key>62ECF140-70C7-4B72-8FD8-5C3047061EA1</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
 			<key>xpos</key>
 			<integer>1145</integer>
 			<key>ypos</key>
-			<integer>940</integer>
+			<integer>1080</integer>
+		</dict>
+		<key>6C43B7F2-E0F5-45CC-9C13-8EDBF49AFA35</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>80</integer>
+			<key>ypos</key>
+			<integer>1345</integer>
 		</dict>
 		<key>6CE4894A-D594-40F6-8ADB-EFD829034766</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>4</integer>
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>640</integer>
 		</dict>
 		<key>8255AAFF-417C-405F-B306-3804A35755E0</key>
 		<dict>
@@ -2707,6 +3315,15 @@ Version 0.1.0 - 2020-11-16
 			<key>ypos</key>
 			<integer>315</integer>
 		</dict>
+		<key>87418458-8B72-4FF0-B37D-02D77C9A82C7</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<integer>645</integer>
+			<key>ypos</key>
+			<integer>1195</integer>
+		</dict>
 		<key>87A4FBBB-B4F7-481F-97EF-BF1295C1614E</key>
 		<dict>
 			<key>colorindex</key>
@@ -2724,6 +3341,24 @@ Version 0.1.0 - 2020-11-16
 			<integer>600</integer>
 			<key>ypos</key>
 			<integer>200</integer>
+		</dict>
+		<key>9B8986E6-2B75-4F52-8277-EC33644ACACA</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>1365</integer>
+		</dict>
+		<key>9C031572-A8B4-4134-8F7C-986908E0E7B0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<integer>255</integer>
+			<key>ypos</key>
+			<integer>1215</integer>
 		</dict>
 		<key>A4E22521-C53F-418D-BC93-79166E299FE2</key>
 		<dict>
@@ -2755,11 +3390,20 @@ Version 0.1.0 - 2020-11-16
 		<key>ACC025AC-6B45-4713-97C7-80D63853908B</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>830</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>910</integer>
+		</dict>
+		<key>AE7939C9-A501-420D-B59D-F9F018611002</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>830</integer>
+			<key>ypos</key>
+			<integer>1345</integer>
 		</dict>
 		<key>B57872F2-D938-4304-A0FA-0A0DA4478848</key>
 		<dict>
@@ -2773,29 +3417,27 @@ Version 0.1.0 - 2020-11-16
 		<key>B5E90B4A-D1F5-43E1-892B-3F6F17D44210</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>830</integer>
-			<key>ypos</key>
-			<integer>910</integer>
-		</dict>
-		<key>B9CE2989-5779-4950-BAE3-14C535A76B44</key>
-		<dict>
-			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
 			<integer>830</integer>
 			<key>ypos</key>
 			<integer>775</integer>
 		</dict>
-		<key>BB07AF18-F262-4F34-85DE-6905401946AC</key>
+		<key>B9CE2989-5779-4950-BAE3-14C535A76B44</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>9</integer>
+			<integer>4</integer>
+			<key>xpos</key>
+			<integer>830</integer>
+			<key>ypos</key>
+			<integer>640</integer>
+		</dict>
+		<key>BB07AF18-F262-4F34-85DE-6905401946AC</key>
+		<dict>
 			<key>xpos</key>
 			<integer>1365</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1050</integer>
 		</dict>
 		<key>BB88F20A-B8E1-48D6-9D27-2A12174D5624</key>
 		<dict>
@@ -2807,6 +3449,15 @@ Version 0.1.0 - 2020-11-16
 			<integer>80</integer>
 			<key>ypos</key>
 			<integer>505</integer>
+		</dict>
+		<key>BDA1B503-0986-4148-ACBD-425E5405B9AC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<integer>645</integer>
+			<key>ypos</key>
+			<integer>1345</integer>
 		</dict>
 		<key>C293EC4D-36FB-4014-8CF9-9A6DB1072107</key>
 		<dict>
@@ -2820,34 +3471,30 @@ Version 0.1.0 - 2020-11-16
 		<key>C80FD136-F125-466F-85AB-6669F343CC99</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>7</integer>
+			<integer>5</integer>
 			<key>xpos</key>
 			<integer>645</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>775</integer>
 		</dict>
 		<key>CEF43D54-F9E3-43D7-A4F3-654B6D4360B6</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
 			<key>xpos</key>
 			<integer>1190</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1050</integer>
 		</dict>
 		<key>D04C032E-4935-4CA7-BA2D-76866C84C8BE</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>405</integer>
 			<key>ypos</key>
 			<integer>1050</integer>
 		</dict>
 		<key>D8740DEC-694B-4897-9488-0542188AA7CC</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
 			<key>xpos</key>
 			<integer>785</integer>
 			<key>ypos</key>
@@ -2865,11 +3512,11 @@ Version 0.1.0 - 2020-11-16
 		<key>DF48C549-1ECF-4E52-9C1A-4FEF0124F209</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>4</integer>
 			<key>xpos</key>
 			<integer>600</integer>
 			<key>ypos</key>
-			<integer>805</integer>
+			<integer>670</integer>
 		</dict>
 		<key>DFF88241-2225-4F77-B999-26D45929B05F</key>
 		<dict>
@@ -2892,11 +3539,11 @@ Version 0.1.0 - 2020-11-16
 		<key>E5F82272-7CF7-4E47-8B82-966A725C31E9</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>4</integer>
 			<key>xpos</key>
 			<integer>255</integer>
 			<key>ypos</key>
-			<integer>780</integer>
+			<integer>645</integer>
 		</dict>
 		<key>EFC316CD-00C4-40EC-885C-698142DA77F5</key>
 		<dict>
@@ -2912,11 +3559,11 @@ Version 0.1.0 - 2020-11-16
 		<key>F0C22B21-294E-435D-83CA-A0BEA8D92CA0</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
+			<integer>6</integer>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>660</integer>
+			<integer>930</integer>
 		</dict>
 		<key>F489E77B-6691-4ADB-80CD-A62E6DF15029</key>
 		<dict>
@@ -2930,20 +3577,29 @@ Version 0.1.0 - 2020-11-16
 		<key>F79B7E0A-779F-41AF-9484-E2BB15083B64</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>7</integer>
+			<integer>5</integer>
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>775</integer>
 		</dict>
 		<key>F9C1C19E-5105-45DD-9857-FE7AC5939E40</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>7</integer>
+			<integer>5</integer>
 			<key>xpos</key>
 			<integer>245</integer>
 			<key>ypos</key>
-			<integer>915</integer>
+			<integer>780</integer>
+		</dict>
+		<key>FB6B0D28-60A2-4298-9AE7-9741A1BC8F02</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>xpos</key>
+			<integer>80</integer>
+			<key>ypos</key>
+			<integer>1195</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -2955,10 +3611,8 @@ Version 0.1.0 - 2020-11-16
 		<key>WORKSPACE_LIST_CACHE_SECONDS</key>
 		<string>86400</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>0.1.1</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pinuz95/alfred-asana-tracker</string>
 </dict>

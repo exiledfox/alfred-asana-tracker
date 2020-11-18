@@ -122,7 +122,7 @@ def generate_report(wf, query):
 
     path = os.path.join(dir, file_name)
 
-    title = "Asana {} Report".format(query)
+    title = "Asana {} report".format(query)
     headers = ["Task", "Projects", "Hours", "Percentage"]
     style = [":-", ":-:", "-:", "-:"]
     format = ["{}", "{}", "{:.1f}", "{:.0f}%"]
