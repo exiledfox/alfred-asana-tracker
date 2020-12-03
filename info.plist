@@ -3104,6 +3104,16 @@ if __name__ == "__main__":
 =========
 
 
+Version 0.3.0 - 2020-12-03
+--------------------------
+
+### Features
+
+* Show recently used items first
+* In the report, aggregate small tasks in "Other"
+
+
+
 Version 0.2.0 - 2020-11-18
 --------------------------
 
@@ -3612,7 +3622,7 @@ Version 0.1.0 - 2020-11-16
 		<string>86400</string>
 	</dict>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pinuz95/alfred-asana-tracker</string>
 </dict>
