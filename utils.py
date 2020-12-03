@@ -138,15 +138,30 @@ def generate_report(wf, query):
         if task["gid"] not in rows:
             rows[task["gid"]] = {
                 "Task": task["name"],
-                "Projects": "<br>".join([e["name"] for e in task["projects"]]),
+                "Projects": [e["name"] for e in task["projects"]],
                 "Hours": 0,
             }
         rows[task["gid"]]["Hours"] += (
             item["end_timestamp"] - max(item["start_timestamp"], min_timestamp)
         ) / 3600
     tot_hours = sum([value["Hours"] for value in rows.values()]) if rows else 0
-    for key in rows:
-        rows[key]["Percentage"] = rows[key]["Hours"] / tot_hours * 100
+    ignored_pct = 0
+    ignored_projects = set()
+    for key in list(rows):
+        pct = rows[key]["Hours"] / tot_hours * 100
+        if pct >= 1:
+            rows[key]["Percentage"] = pct
+            rows[key]["Projects"] = "<br>".join(rows[key]["Projects"])
+        else:
+            ignored_pct += pct
+            ignored_projects = ignored_projects.union(rows[key]["Projects"])
+            del rows[key]
+    rows["-1"] = {
+        "Task": "Other",
+        "Projects": "<br>".join(ignored_projects),
+        "Hours": tot_hours * ignored_pct / 100,
+        "Percentage": ignored_pct,
+    }
 
     content = "#{}\n".format(title)
     content += "|{}|\n".format("|".join(headers))
@@ -154,7 +169,11 @@ def generate_report(wf, query):
     content += "".join(
         [
             (u"|{}|\n".format("|".join(format))).format(*[row[header] for header in headers])
-            for row in rows.values()
+            for row in sorted(
+                sorted(
+                    rows.values(), key=lambda row: row["Percentage"], reverse=True
+                ), key=lambda row: row["Task"] == "Other", reverse=False
+            )
         ]
     )
     content += "|" + (len(headers) * "|") + "\n"
