@@ -817,7 +817,7 @@ def main(wf):
         min_score=20,
     )
     for project in filtered_projects:
-        wf.add_item("Select default Project", project["name"], valid=True, arg=json.dumps(project))
+        wf.add_item("Select default Project", project["name"], valid=True, arg=json.dumps(project), uid=project["gid"])
     if len(filtered_projects) == 0:
         wf.add_item(
             "No projects found",
@@ -1019,7 +1019,7 @@ def main(wf):
     )
     for workspace in filtered_workspaces:
         wf.add_item(
-            "Select default Workspace", workspace["name"], valid=True, arg=json.dumps(workspace)
+            "Select default Workspace", workspace["name"], valid=True, arg=json.dumps(workspace), uid=workspace["gid"]
         )
     if len(filtered_workspaces) == 0:
         wf.add_item(
@@ -1292,7 +1292,7 @@ def main(wf):
     )
     for field in filtered_fields:
         wf.add_item(
-            "Select field to track spent hours", field["name"], valid=True, arg=json.dumps(field)
+            "Select field to track spent hours", field["name"], valid=True, arg=json.dumps(field), uid=field["gid"]
         )
     if len(filtered_fields) == 0:
         wf.add_item(
@@ -1531,7 +1531,7 @@ def main(wf):
     )
 
     for task in filtered_tasks:
-        wf.add_item("Start Timer", task["name"], valid=True, arg=json.dumps(task))
+        wf.add_item("Start Timer", task["name"], valid=True, arg=json.dumps(task), uid=task["gid"])
     if len(filtered_tasks) == 0:
         wf.add_item(
             "No tasks found",
@@ -2037,7 +2037,7 @@ def main(wf):
     )
 
     for task in filtered_tasks:
-        wf.add_item("Complete Task", task["name"], valid=True, arg=json.dumps(task))
+        wf.add_item("Complete Task", task["name"], valid=True, arg=json.dumps(task), uid=task["gid"])
     if len(filtered_tasks) == 0:
         wf.add_item(
             "No tasks found",
@@ -2262,7 +2262,7 @@ def main(wf):
     )
 
     for task in filtered_tasks:
-        wf.add_item("Stop Timer", task["name"], valid=True, arg=task["gid"])
+        wf.add_item("Stop Timer", task["name"], valid=True, arg=task["gid"], uid=task["gid"])
     if len(filtered_tasks) == 0:
         wf.add_item("No running timers", valid=False)
 
@@ -2805,7 +2805,7 @@ def main(wf):
     )
 
     for task in filtered_tasks:
-        wf.add_item("Cancel Timer", task["name"], valid=True, arg=task["gid"])
+        wf.add_item("Cancel Timer", task["name"], valid=True, arg=task["gid"], uid=task["gid"])
     if len(filtered_tasks) == 0:
         wf.add_item("No running timers", valid=False)
 
@@ -2994,7 +2994,7 @@ def main(wf):
     )
 
     for task in filtered_tasks:
-        wf.add_item("Reset Task", task["name"], valid=True, arg=task["gid"])
+        wf.add_item("Reset Task", task["name"], valid=True, arg=task["gid"], uid=task["gid"])
     if len(filtered_tasks) == 0:
         wf.add_item("No saved tasks", valid=False)
 
