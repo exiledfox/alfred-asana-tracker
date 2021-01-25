@@ -3125,6 +3125,15 @@ if __name__ == "__main__":
 =========
 
 
+Version 0.3.1 - 2021-01-25
+--------------------------
+
+### Bug fixes
+
+* Fix special characters encoding in tasks names
+
+
+
 Version 0.3.0 - 2020-12-03
 --------------------------
 
@@ -3148,7 +3157,7 @@ Version 0.2.0 - 2020-11-18
 Version 0.1.1 - 2020-11-16
 --------------------------
 
-### Bug Fixes
+### Bug fixes
 
 * Fix a bug in task creation
 
@@ -3643,7 +3652,7 @@ Version 0.1.0 - 2020-11-16
 		<string>86400</string>
 	</dict>
 	<key>version</key>
-	<string>0.3.0</string>
+	<string>0.3.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/pinuz95/alfred-asana-tracker</string>
 </dict>
