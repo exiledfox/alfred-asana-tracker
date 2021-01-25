@@ -1518,10 +1518,12 @@ def main(wf):
     project_gid = get_default_project_gid(wf)
     if not project_gid:
         return 0
+    wf.logger.debug("configuration loaded")
 
     query = wf.args[0]
 
     if not wf.cached_data_fresh("get_user_task_list", CACHE_SECONDS):
+        wf.logger.debug("loading updated tasks")
         run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
     tasks = wf.cached_data(
         "get_user_task_list", lambda: get_user_task_list(token, "me", workspace_gid), max_age=0
@@ -1529,6 +1531,7 @@ def main(wf):
     filtered_tasks = wf.filter(
         query, tasks, lambda task: task["name"], match_on=MATCH_ALL ^ MATCH_ALLCHARS, min_score=20
     )
+    wf.logger.debug("filtered_tasks computed")
 
     for task in filtered_tasks:
         wf.add_item("Start Timer", task["name"], valid=True, arg=json.dumps(task), uid=task["gid"])
@@ -1948,7 +1951,7 @@ def main(wf):
     if task_info is not None and task["gid"] in task_info:
         if task_info[task["gid"]]["start_timestamp"] is not None:
             elapsed_hours = stop_task(wf, task["gid"])
-            query = "{} (running for {:.1f} hours)".format(task["name"], elapsed_hours)
+            query = u"{} (running for {:.1f} hours)".format(task["name"], elapsed_hours)
 
         # clean task_info
         task_info = wf.stored_data("task_info")
@@ -2025,6 +2028,8 @@ def main(wf):
     if not workspace_gid:
         return 0
 
+    wf.logger.debug("configuration loaded")
+
     query = "{query}"
 
     if not wf.cached_data_fresh("get_user_task_list", CACHE_SECONDS):
@@ -2035,6 +2040,7 @@ def main(wf):
     filtered_tasks = wf.filter(
         query, tasks, lambda task: task["name"], match_on=MATCH_ALL ^ MATCH_ALLCHARS, min_score=20
     )
+    wf.logger.debug("filtered_tasks computed")
 
     for task in filtered_tasks:
         wf.add_item("Complete Task", task["name"], valid=True, arg=json.dumps(task), uid=task["gid"])
@@ -2154,7 +2160,7 @@ def main(wf):
     task_gid = "{query}"
     task_name = wf.stored_data("task_info")[task_gid]["name"]
     elapsed_hours = stop_task(wf, task_gid)
-    sys.stdout.write("{} (running for {:.1f} hours)".format(task_name, elapsed_hours))
+    sys.stdout.write(u"{} (running for {:.1f} hours)".format(task_name, elapsed_hours))
     return 0
 
 
@@ -2234,7 +2240,10 @@ def main(wf):
     if not token:
         return 0
 
+    wf.logger.debug("configuration loaded")
+
     task_info = wf.stored_data("task_info")
+    wf.logger.debug("task_info loaded")
 
     if task_info is None:
         wf.add_item("No running timers", valid=False)
@@ -2245,7 +2254,7 @@ def main(wf):
     running_tasks = [
         {
             "gid": task_gid,
-            "name": "{} (running for {:.1f} hours)".format(
+            "name": u"{} (running for {:.1f} hours)".format(
                 task_info[task_gid]["name"],
                 (time.time() - task_info[task_gid]["start_timestamp"]) / 3600,
             ),
@@ -2253,6 +2262,8 @@ def main(wf):
         for task_gid in task_info
         if task_info[task_gid]["start_timestamp"] is not None
     ]
+    wf.logger.debug("running_tasks computed")
+
     filtered_tasks = wf.filter(
         query,
         running_tasks,
@@ -2260,6 +2271,7 @@ def main(wf):
         match_on=MATCH_ALL ^ MATCH_ALLCHARS,
         min_score=20,
     )
+    wf.logger.debug("filtered_tasks computed")
 
     for task in filtered_tasks:
         wf.add_item("Stop Timer", task["name"], valid=True, arg=task["gid"], uid=task["gid"])
@@ -2347,7 +2359,7 @@ def main(wf):
         return 0
 
     wf.save_password("asana_personal_access_token", token)
-    sys.stdout.write("Authentication succeded! Enjoy the workflow")
+    sys.stdout.write("Authentication succeeded! Enjoy the workflow")
     return 0
 
 
@@ -2536,6 +2548,7 @@ def main(wf):
     token = get_token(wf)
     if not token:
         return 0
+    wf.logger.debug("configuration loaded")
 
     if wf.stored_data("task_history") is None:
         wf.add_item("Generate Report", "No data to show", valid=False)
@@ -2776,8 +2789,10 @@ def main(wf):
     token = get_token(wf)
     if not token:
         return 0
+    wf.logger.debug("configuration loaded")
 
     task_info = wf.stored_data("task_info")
+    wf.logger.debug("task_info loaded")
 
     if task_info is None:
         wf.add_item("No running timers", valid=False)
@@ -2788,7 +2803,7 @@ def main(wf):
     running_tasks = [
         {
             "gid": task_gid,
-            "name": "{} (running for {:.1f} hours)".format(
+            "name": u"{} (running for {:.1f} hours)".format(
                 task_info[task_gid]["name"],
                 (time.time() - task_info[task_gid]["start_timestamp"]) / 3600,
             ),
@@ -2796,6 +2811,7 @@ def main(wf):
         for task_gid in task_info
         if task_info[task_gid]["start_timestamp"] is not None
     ]
+    wf.logger.debug("running_tasks computed")
     filtered_tasks = wf.filter(
         query,
         running_tasks,
@@ -2803,6 +2819,7 @@ def main(wf):
         match_on=MATCH_ALL ^ MATCH_ALLCHARS,
         min_score=20,
     )
+    wf.logger.debug("filtered_tasks computed")
 
     for task in filtered_tasks:
         wf.add_item("Cancel Timer", task["name"], valid=True, arg=task["gid"], uid=task["gid"])
@@ -2856,7 +2873,7 @@ def main(wf):
 	task_info = wf.stored_data("task_info")
 	task_info[task_gid]["start_timestamp"] = None
 	wf.store_data("task_info", task_info)
-	
+
 	task_name = task_info[task_gid]["name"]
 	sys.stdout.write(task_name)
 	return 0
@@ -2969,8 +2986,10 @@ def main(wf):
     token = get_token(wf)
     if not token:
         return 0
+    wf.logger.debug("configuration loaded")
 
     task_info = wf.stored_data("task_info")
+    wf.logger.debug("task_info loaded")
 
     if task_info is None:
         wf.add_item("No saved tasks", valid=False)
@@ -2985,6 +3004,7 @@ def main(wf):
         }
         for task_gid in task_info
     ]
+    wf.logger.debug("saved_tasks computed")
     filtered_tasks = wf.filter(
         query,
         saved_tasks,
@@ -2992,6 +3012,7 @@ def main(wf):
         match_on=MATCH_ALL ^ MATCH_ALLCHARS,
         min_score=20,
     )
+    wf.logger.debug("filtered_tasks computed")
 
     for task in filtered_tasks:
         wf.add_item("Reset Task", task["name"], valid=True, arg=task["gid"], uid=task["gid"])
@@ -3043,10 +3064,10 @@ def main(wf):
 
 	# delete task's info
 	task_info = wf.stored_data("task_info")
-	task_name = task_info[task_gid]["name"]	
+	task_name = task_info[task_gid]["name"]
 	del task_info[task_gid]
 	wf.store_data("task_info", task_info)
-	
+
 	sys.stdout.write(task_name)
 	return 0
 
