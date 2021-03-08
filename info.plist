@@ -3125,6 +3125,15 @@ if __name__ == "__main__":
 =========
 
 
+Version 0.3.2 - 2021-03-08
+--------------------------
+
+### Bug fixes
+
+* Fix field value read bug
+
+
+
 Version 0.3.1 - 2021-01-25
 --------------------------
 
@@ -3652,7 +3661,7 @@ Version 0.1.0 - 2020-11-16
 		<string>86400</string>
 	</dict>
 	<key>version</key>
-	<string>0.3.1</string>
+	<string>0.3.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/pinuz95/alfred-asana-tracker</string>
 </dict>
