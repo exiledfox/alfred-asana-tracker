@@ -126,19 +126,19 @@ def get_fields(task):
 
 
 def get_field_value(task, field_gid):
+    default_values = {
+        "number": 0,
+    }
+
     fields = get_fields(task)
 
     for field in fields:
         if field_gid == field["gid"]:
-            for key in field:
-                if "value" in key:
-                    res = field[key]
-                    if res is not None:
-                        return res
-                    elif "number" in key:
-                        return 0
-                    else:
-                        return ValueError("Unkown field type.")
+            field_type = field["type"]
+            value_name = field_type + "_value"
+            if value_name in field:
+                res = field[value_name]
+                return res or (default_values[field_type] if field_type in default_values else None)
             else:
                 return ValueError("Field without value.")
     else:
