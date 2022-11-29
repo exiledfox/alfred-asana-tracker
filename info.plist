@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>it.ggallo.asana</string>
+	<string>it.ggallo.ab.asana</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -806,7 +806,7 @@ def main(wf):
     query = "{query}"
     if not wf.cached_data_fresh("get_projects", CACHE_SECONDS):
         run_in_background(
-            "update_projects", ["/usr/bin/python", wf.workflowfile("update_projects.py")]
+            "update_projects", ["/usr/local/bin/python", wf.workflowfile("update_projects.py")]
         )
     projects = wf.cached_data("get_projects", lambda: get_projects(token), max_age=0)
     filtered_projects = wf.filter(
@@ -1524,7 +1524,7 @@ def main(wf):
 
     if not wf.cached_data_fresh("get_user_task_list", CACHE_SECONDS):
         wf.logger.debug("loading updated tasks")
-        run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
+        run_in_background("update_tasks", ["/usr/local/bin/python", wf.workflowfile("update_tasks.py")])
     tasks = wf.cached_data(
         "get_user_task_list", lambda: get_user_task_list(token, "me", workspace_gid), max_age=0
     )
@@ -1721,7 +1721,7 @@ def main(wf):
     project_gid = wf.settings["project_gid"]
 
     create_task(token, {"name": task_name, "projects": [project_gid], "assignee": "me"})
-    run_in_background("update_tasks", ["/usr/bin/python", wf.workflowfile("update_tasks.py")])
+    run_in_background("update_tasks", ["/usr/local/bin/python", wf.workflowfile("update_tasks.py")])
 
     sys.stdout.write(task_name)
     return 0
@@ -3599,7 +3599,7 @@ Version 0.1.0 - 2020-11-16
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Initizialize permanent files here</string>
+			<string>Inizialize permanent files here</string>
 			<key>xpos</key>
 			<integer>645</integer>
 			<key>ypos</key>
@@ -3661,8 +3661,8 @@ Version 0.1.0 - 2020-11-16
 		<string>86400</string>
 	</dict>
 	<key>version</key>
-	<string>0.3.2</string>
+	<string>0.3.2.1</string>
 	<key>webaddress</key>
-	<string>https://github.com/pinuz95/alfred-asana-tracker</string>
+	<string>https://github.com/exiledfoc/alfred-asana-tracker</string>
 </dict>
 </plist>
